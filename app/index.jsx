@@ -1,18 +1,23 @@
-import { StyleSheet,Text,View,Image,useColorScheme } from "react-native";
-import logo from "../assets/images/treasure-closed.png"
+import { StyleSheet,Text} from "react-native";
 import {Link} from "expo-router"
-import Colors from "../Constants/Colors.js"
+import ThemedView from '../Components/ThemedView.jsx'
+import ThemedLogo from "../Components/ThemedLogo.jsx";
+import Spacer from '../Components/Spacer.jsx'
+import ThemedText from '../Components/ThemedText.jsx'
 function Home(){
-    const colorScheme = useColorScheme()
-    const theme = Colors[colorScheme] ?? Colors.light
     return(
-        <View style={styles.container}>
-            <Image source={logo} style={styles.img}/>
-            <Text style={styles.title}>The number 1</Text>
-            <Text>Reading List App</Text>
-            <Link href="/about" style={styles.link}>About Page</Link>
-            <Link href="/contact" style={styles.link}>Contact Page</Link>
-        </View>
+        <ThemedView style={styles.container}>
+            <ThemedLogo/>
+            <Spacer height={20}/>
+            <ThemedText style={styles.title} title={true}>The number 1</ThemedText>
+            <Spacer height={10}/>
+            <ThemedText>Reading List App</ThemedText>
+            <Spacer/>
+            <Link href="/about" style={styles.link}>
+            <ThemedText>About Page</ThemedText>
+            </Link>
+            <Link href="/contact" style={styles.link}><ThemedText>Contact Page</ThemedText></Link>
+        </ThemedView>
     )
 }
 export default Home
@@ -25,11 +30,6 @@ const styles = StyleSheet.create({
     title: {
         fontWeight:'bold',
         fontSize:25,
-        color:"purple"
-    },
-    img: {
-        marginVertical:20,
-
     },
     link: {
         marginVertical:10,
