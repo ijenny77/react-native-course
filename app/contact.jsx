@@ -3,9 +3,9 @@ import {Link} from "expo-router"
 function About() {
     return(
         <View style={styles.container}>
-            <Text style={styles.title}>About page</Text>
+            <Text style={styles.title}>Contact Page</Text>
+            <Text style={styles.link}>About page</Text>
             <Link href="/" style={styles.link}>Home page</Link>
-             <Link href="/contact" style={styles.link}>Contact Page</Link>
         </View>
     );
 }
