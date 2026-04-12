@@ -1,7 +1,10 @@
-import { StyleSheet,Text,View,Image } from "react-native";
+import { StyleSheet,Text,View,Image,useColorScheme } from "react-native";
 import logo from "../assets/images/treasure-closed.png"
 import {Link} from "expo-router"
+import Colors from "../Constants/Colors.js"
 function Home(){
+    const colorScheme = useColorScheme()
+    const theme = Colors[colorScheme] ?? Colors.light
     return(
         <View style={styles.container}>
             <Image source={logo} style={styles.img}/>
