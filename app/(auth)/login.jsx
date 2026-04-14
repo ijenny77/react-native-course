@@ -20,6 +20,9 @@ function Login() {
             <Link href='/register'>
             <ThemedText style={{textAlign:'center'}}>Register instead</ThemedText>
             </Link>
+            <Link href='/'>
+            <ThemedText style={{textAlign:'center'}}>Home</ThemedText>
+            </Link>
         </ThemedView>
     )
 }
